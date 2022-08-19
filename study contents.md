@@ -39,7 +39,8 @@
 - 계속 반복해서 사용할 수 있는 코드 조각
 ### function sayhello() { 반복되서 사용되는 코드 적용 }
 - 만든 함수 사용-> sayhello();
-- 
+
+
 ## Functions par two
 ### Objects 안에 function을 넣었을경우
 const player = {name: "khw",
