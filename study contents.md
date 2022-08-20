@@ -33,7 +33,8 @@
 ## Objects
 - 리스트안에 다양한 데이터 타입이 존재하면 각각이 무엇을 나타내는지 알아내기 어렵다.
 - Objects는 각각의 데이터들이 무엇을 나타내는지 알아볼 수 있다.
-- Objects 형태 ex) const player= {name: ~ , point:~ ,}
+- Objects 형태 ex) const player= {name: ~ , point:~ ,}  //player.name, player,point
+- console또한 Objects라는 사실
 - Objects에서 새로운 데이터 추가 : player.데이터 변수명= 데이터명;
 
 ## Functions par one
