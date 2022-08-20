@@ -100,7 +100,7 @@ console.log(..);
 ##  Events
 - 사용자의 어떠한 행동 ex) click
 - ex) title.addEventListener("click", handleTitleClick); 
-      - click이라는 event가 발생하면 듣고 js가 handleTitleClick 함수 버튼을 누른다.
+  - click이라는 event가 발생하면 듣고 js가 handleTitleClick 함수 버튼을 누른다.
 ex) function handleTitleClick() {
 title.innerText = "Click me!";
 title.style.color = "blue";
