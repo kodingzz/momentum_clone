@@ -97,7 +97,7 @@ console.log(..);
   - ex) const title = document.querySelector(".hello h1");    // hello 클래스의 h1태그 하나를 가져온다.
   - ex) const title = document.querySelectorAll(".hello h1");    // hello 클래스안에 h1 태그가 여러줄인 경우 배열형태로 가져온다.
   
-  ##  Events
+##  Events
   - 사용자의 어떠한 행동 ex) click
   - ex) title.addEventListener("click", handleTitleClick); 
         - click이라는 event가 발생하면 듣고 js가 handleTitleClick 함수 버튼을 누른다.
