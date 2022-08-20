@@ -89,7 +89,7 @@ console.log(..);
 
 ## HTML in Javascript
 - html에서 항목을 가져온후 js를 통해 변경한다.
-- 
+
 ### js로 가져오는 방법
 - const title = document.getElementById("title"); // html의 id를통해 찾는다.
 - document.querySelector("#hello")    // = document.getElementById("hello")
