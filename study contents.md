@@ -28,6 +28,7 @@
 - 큰 괄호([])안에 채워넣고 데이터사이는 쉼표로 구분한다.
 - list의 첫번째 index는 0이다.
 - Add one more dat to the array //  daysOfWeek.push("sun");
+- 기존에있는 리스트 업데이트 하기 // daysofWeek[6]="dwdwd";  
 
 ## Objects
 - 리스트안에 다양한 데이터 타입이 존재하면 각각이 무엇을 나타내는지 알아내기 어렵다.
