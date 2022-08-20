@@ -52,3 +52,47 @@ console.log("hello! " + othername);
 };
 - player라는 Objects안에 sayhello라는 함수를 정의하였다.
 - player.sayhello("lynn"); // player에서 sayhello라는 함수를 사용할 수 있다.
+
+## Returns
+- return에 의해서 function안의 값의 결과를 밖에서 새로운 변수로 받아 사용할 수 있다.
+### ex
+const age = 23;
+function calculatorkrage(ageofForeigner) {
+return ageofForeigner + 2;
+}
+const krage = calculatorkrage(age);
+console.log(krage);
+- return을 하면 function은 작동을멈추고 결과값을 return하고 끝낸다.
+
+## Conditionals 
+### 조건(if)
+- prompt() : 코드의 진행을 멈추게한다.
+- type of : 변수의 type(number,string..)을 알 수 있다.
+- parseInt : string -> number로 type 변환
+
+## Conditionals part Two
+### 조건문 형태
+if() {
+console.log(...);
+}
+else {
+console.log(..);
+}
+## Conditionals part Three
+- && : and 기호
+- || : or 기호
+
+## The Document Object
+- document는 web site를 의미한다.
+- js는 html과 연결되어 있으므로 js로 html항목을 가져올 수 있다.
+
+
+## HTML in Javascript
+- html에서 항목을 가져온후 js를 통해 변경한다.
+
+### js로 가져오는 방법
+- const title = document.getElementById("title");       // html의 id를통해 찾는다.
+- document.querySelector("#hello")  
+- js에서 html element를 가져오는데 대부분 querySelector를 사용한다.  
+  - ex) const title = document.querySelector(".hello h1");    // hello 클래스의 h1태그 하나를 가져온다.
+  - ex) const title = document.querySelectorAll(".hello h1");    // hello 클래스안에 h1 태그가 여러줄인 경우 배열형태로 가져온다.
