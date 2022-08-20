@@ -55,7 +55,7 @@ console.log("hello! " + othername);
 
 ## Returns
 - return에 의해서 function안의 값의 결과를 밖에서 새로운 변수로 받아 사용할 수 있다.
-### ex)
+### ex
 const age = 23;
 function calculatorkrage(ageofForeigner) {
 return ageofForeigner + 2;
