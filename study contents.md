@@ -93,6 +93,6 @@ console.log(..);
 ### js로 가져오는 방법
 - const title = document.getElementById("title");       // html의 id를통해 찾는다.
 - document.querySelector("#hello")  
-- js에서 html element를 가져오는데 대부분 querySelector를 사용한다.
-  - ex) const title = document.querySelector(".hello h1");   
+- js에서 html element를 가져오는데 대부분 querySelector를 사용한다.  
+  - ex) const title = document.querySelector(".hello h1");    // hello 클래스의 h1태그 하나를 가져온다.
   - ex) const title = document.querySelectorAll(".hello h1");    // hello 클래스안에 h1 태그가 여러줄인 경우 배열형태로 가져온다.
