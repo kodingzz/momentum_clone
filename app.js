@@ -1,7 +1,8 @@
-const title = document.querySelector(".hello h1");
+// const loginform = document.querySelector("#login-form"); // login-form id 찾기
+const logininput = document.querySelector("#login-form input"); // login-form id안의 input
+const loginbutton = document.querySelector("#login-form button"); // login-form id안의 button
 
-function handleTitleClick() {
-  title.classList.toggle("clicked");
+function onLoginButton() {
+  console.log("hello " + logininput.value); // value는 input의 입력값
 }
-
-title.addEventListener("click", handleTitleClick);
+loginbutton.addEventListener("click", onLoginButton);
