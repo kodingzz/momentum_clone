@@ -135,8 +135,7 @@ const loginbutton = document.querySelector("#login-form button"); // login-form 
 function onLoginButton() {
 console.log(logininput.value); // value는 input의 입력값
 }
-loginbutton.addEventListener("click", onLoginButton);
--> input의 value값을 입력하고 버튼누르면 콘솔에 입력값출력
+loginbutton.addEventListener("click", onLoginButton);  // input의 value값을 입력하고 버튼누르면 콘솔에 입력값출력
 
 ##  Form Submission
 - form 안의 속성에는 required(필수), maxlength , type, placeholder 등이있다.
@@ -145,7 +144,6 @@ loginbutton.addEventListener("click", onLoginButton);
 
 ##  Events
 function onLoginSubmit(event) {
-//const username = logininput.value;
 event.preventDefault(); // 어떤 event의 기본행동등(새로고침)이 발생되지 않도록 막는다.
 console.log(logininput.value);
 }
