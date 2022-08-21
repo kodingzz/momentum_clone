@@ -4,13 +4,7 @@ const loginbutton = document.querySelector("#login-form button"); // login-form 
 
 function onLoginButton() {
   const username = logininput.value;
-  if (username === "") {
-    alert("Please write your name");
-  } else if (username.length > 15) {
-    alert("Your name is too long!");
-  } else {
-    console.log("hello " + logininput.value); // value는 input의 입력값
-  }
+  console.log(username);
 }
 
 loginbutton.addEventListener("click", onLoginButton);
