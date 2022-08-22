@@ -11,7 +11,8 @@ function onLoginSubmit(event) {
   const username = logininput.value;
   console.log(username);
   greeting.innerText = `Hello ${username}`; //greeting.innerText = "Hello " + username;
-  greeting.classList.remove("hidden"); //클래스를 추가하거나 삭제할때 , classList.add, remove
+  greeting.classList.remove("hidden"); //클래스를 추가하거나 삭제할때 , classList.add, remo e
+  localStorage.setItem("username", username);
 }
 
 function LinkClick(event) {
