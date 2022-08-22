@@ -14,5 +14,4 @@ function getClock() {
 
 getClock();
 setInterval(getClock, 1000);
-
 //setTimeout(sayhello, 3000);
