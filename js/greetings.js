@@ -11,7 +11,7 @@ function onLoginSubmit(event) {
   loginform.classList.add("hidden"); // form을 제거해주는 hidden클래스 추가
   const username = logininput.value;
   console.log(username);
-  paintgreetings(username);
+  paintgreetings(username); // input에 입력한  username을 가져온다.
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
@@ -28,5 +28,5 @@ if (savedUsername === null) {
   loginform.addEventListener("submit", onLoginSubmit);
 } else {
   console.log(savedUsername);
-  paintgreetings(savedUsername);
+  paintgreetings(savedUsername); // localstorage에서  username을 가져온다.
 }
