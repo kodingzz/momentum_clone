@@ -10,7 +10,7 @@ function onLoginSubmit(event) {
   event.preventDefault(); // 어떤 event의 기본행동등(새로고침)이 발생되지 않도록 막는다.
   loginform.classList.add("hidden"); // form을 제거해주는 hidden클래스 추가
   const username = logininput.value;
-  console.log(username);
+  localStorage.setItem("username", username);
   paintgreetings(username); // input에 입력한  username을 가져온다.
 }
 
@@ -23,10 +23,8 @@ function paintgreetings(username) {
 }
 
 if (savedUsername === null) {
-  console.log(savedUsername);
   loginform.classList.remove("hidden");
   loginform.addEventListener("submit", onLoginSubmit);
 } else {
-  console.log(savedUsername);
   paintgreetings(savedUsername); // localstorage에서  username을 가져온다.
 }
