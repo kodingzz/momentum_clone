@@ -112,6 +112,43 @@ console.log(..);
 - resize : 화면크기 변경 할때
 - copy : 무언가를 복사할때
 - offline, online : wifi 연결/비연결시
+## CSS in Javascript=
+### js에서 event 이용하기
+1)element를 찾기
+2) event를 listen
+3) event에 반응하기(보여주거나 감추거나 클릭하는것) - 함수 안
+## CSS in Javascript part Two 
+- js는 html을 변경하고, css는 html을 바라보고 있다.
+## CSS in Javascript part Three
+const clickedClass = "clicked"; // clicked는 클래스명
+if (title.classList.contains(clickedClass)) {
+title.classList.remove(clickedClass); // class 에서 clickedClass를 제거한다.
+} else {
+title.classList.add(clickedClass); // class에서 clickedClass를 추가한다.
+}
+### add와 remove를 해주는 함수 -> toggle
+- title.classList.toggle("clicked"); // clicked가 없으면 classList에 추가, 있으면 제거
 
+##  Input Values 
+const logininput = document.querySelector("#login-form input"); // login-form id안의 input
+const loginbutton = document.querySelector("#login-form button"); // login-form id안의 button
+function onLoginButton() {
+console.log(logininput.value); // value는 input의 입력값
+}
+loginbutton.addEventListener("click", onLoginButton);  // input의 value값을 입력하고 버튼누르면 콘솔에 입력값출력
 
+##  Form Submission
+- form 안의 속성에는 required(필수), maxlength , type, placeholder 등이있다.
+- input 밖을 form으로 감싸면 따로 조건문을 주지않아도 html이 최대길이, 빈칸등을 잡아준다.
+- 문제는 버튼을 클릭할때 자동으로 submit(새로고침)된다는 것
 
+##  Events
+function onLoginSubmit(event) {
+event.preventDefault(); // 어떤 event의 기본행동등(새로고침)이 발생되지 않도록 막는다.
+console.log(logininput.value);
+}
+loginform.addEventListener("submit", onLoginSubmit);
+##  Events part Two
+- js는 함수를 실행시키는 동시에 그 함수에 첫번째 인자에 object를 넣어준다. object에는 방금 일어난 event에 대한 여러정보가 담겨있다.
+- addEventListner 안에 있는 함수는 직접 실행하지 않는다. 브라우저가 해준다. 브라우저는 이벤트에 대한 정보도 가지고 있다.
+- link의 기본동작은 클릭시 다른 사이트로 넘어가는것이다. preventDefault() 를 이용해 link의 기본동작을 막을 수 있다.
