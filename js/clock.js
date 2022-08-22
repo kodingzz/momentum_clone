@@ -1,9 +1,15 @@
 const clock = document.querySelector("#clock");
 
-clock.innerText = "00:00";
+//function sayhello() {
+//console.log("hello");
+//}
 
-function sayhello() {
-  console.log("hello");
+function getClock() {
+  const date = new Date();
+  clock.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`; //00:00:00
 }
 
-setInterval(sayhello, 3000);
+getClock();
+setInterval(getClock, 1000); // 특정함수를 3초에 한번씩 반복한다.
+
+//setTimeout(sayhello, 3000);
