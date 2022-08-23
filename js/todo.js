@@ -57,3 +57,9 @@ if (savedtoDos != null) {
   todoS = parsedtoDos;
   parsedtoDos.forEach(PaintTodo); // 새로고침해도 localstorage에 있던 각각의 요소들을 가져온다.
 }
+
+function sexyfilter(item) {
+  return item !== 3;
+}
+
+[1, 2, 3, 4].filter(sexyfilter);
