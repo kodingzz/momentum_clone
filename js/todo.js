@@ -2,7 +2,7 @@ const todoForm = document.querySelector("#todo-form");
 const todoInput = todoForm.querySelector("input");
 // const todoInput =document.querySelector("#todo-form input");
 const todoList = document.querySelector("#todo-list");
-const todoS = [];
+let todoS = []; // 이전요소 +새 요소들을 넣을때 덮어지지않기 위해 let변수 사용
 
 function handleTodoSubmit(event) {
   event.preventDefault();
@@ -16,7 +16,7 @@ function handleTodoSubmit(event) {
 
 function SaveTodos() {
   // localstorage에 저장하는 함수
-  localStorage.setItem("toDos", JSON.stringify(todoS)); // localstorage에  저장할때 배열의 형태로 저장(덮어쓰기 가능)
+  localStorage.setItem("toDos", JSON.stringify(todoS)); // localstorage에  저장할때 String형태로 변환
 }
 
 function PaintTodo(newtodo) {
@@ -48,6 +48,6 @@ const savedtoDos = localStorage.getItem("toDos");
 console.log(savedtoDos); // String 형태
 if (savedtoDos != null) {
   const parsedtoDos = JSON.parse(savedtoDos); // String->arry 형태로 변환
-  console.log(parsedtoDos);
-  pasrsedtoDos.forEach((item) => console.log("hello " + item)); // arrow function
+  todoS = parsedtoDos;
+  parsedtoDos.forEach(PaintTodo); // 새로고침해도 localstorage에 있던 각각의 요소들을 가져온다.
 }
