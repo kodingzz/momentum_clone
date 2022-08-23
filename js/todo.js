@@ -9,8 +9,13 @@ function handleTodoSubmit(event) {
   const newtodo = todoInput.value; // 입력값이 비워지기전에 newtodo에 값을 저장함.
   todoInput.value = ""; // 입력값을 비운다.
   console.log(newtodo);
-  todoS.push(newtodo); //  리스트에 입력값을 추가한다.(push)
-  PaintTodo(newtodo); // 입력값을 화면상에 그린다.(paint)
+  const newtodoObj = {
+    // 입력값 각각에 랜덤한 id를 주어서 요소를 삭제했을때 데이터베이스에서도 삭제한다.
+    text: newtodo,
+    id: Date.now(), // 랜덤한 값 출력
+  };
+  todoS.push(newtodoObj); //  리스트에 입력값을 추가한다.(push)
+  PaintTodo(newtodoObj); // 입력값을 화면상에 그린다.(paint)
   SaveTodos(); //  입력값을  local storage에 저장한다.
 }
 
@@ -23,8 +28,8 @@ function PaintTodo(newtodo) {
   // input에 적은 값을 list에 추가해주는 함수
   const li = document.createElement("li"); // li 태그 생성
   const span = document.createElement("span"); // span 태그 생성
-
-  span.innerText = newtodo; // span안에 input값을 넣는다.
+  li.id = newtodo.id;
+  span.innerText = newtodo.text; // span안에 input값을 넣는다.
   const button = document.createElement("button");
   button.innerText = "❌";
   button.addEventListener("click", DeleteTodo);
@@ -39,6 +44,7 @@ function DeleteTodo(event) {
   // list를 삭제해주는 함수
   // console.dir(event.target.parentElement);
   const li = event.target.parentElement; // target 은 button이다. button의 부모는 li
+  console.log(li.id);
   li.remove(); // 클릭된 button의 부모 li를 제거하면 버튼이 제거된다. +text도 제거
 }
 
