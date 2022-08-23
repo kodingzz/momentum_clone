@@ -152,3 +152,55 @@ loginform.addEventListener("submit", onLoginSubmit);
 - js는 함수를 실행시키는 동시에 그 함수에 첫번째 인자에 object를 넣어준다. object에는 방금 일어난 event에 대한 여러정보가 담겨있다.
 - addEventListner 안에 있는 함수는 직접 실행하지 않는다. 브라우저가 해준다. 브라우저는 이벤트에 대한 정보도 가지고 있다.
 - link의 기본동작은 클릭시 다른 사이트로 넘어가는것이다. preventDefault() 를 이용해 link의 기본동작을 막을 수 있다.
+
+
+## Saving Username
+- localstorage에 정보 저장
+- local storage는 browser에서 제공하는 DB로 key:value로 데이터를 저장한다.
+- localStorage.setItem(key, value); / localStorage.getItem(key); / localStorage.removeItem(key);
+
+## Loading Username 
+- 두 문장이상이 겹치는 경우 함수로 만들어서 사용하는게 편하다.
+- 마찬가지로 여러번 나오는 변수는 오타에 대비하여 변수로 생성해주는것이 좋다.
+- ex) const USERNAME_KEY = "username";
+
+## Super Recap
+- local storage에는 key, value 가있다.
+- key에대해 검색하면 value값을 받는다.
+
+## Intervals
+- 일정한 시간마다 반복하는것
+- setInterval(sayhello, 3000); // sayhello 함수를 3초에 한번씩 반복한다.
+
+## Timeouts and Dates
+- setTimeout(sayhello, 3000); // 3초후 sayhello 실행하고 종료
+### setInterval 함수를 이용해서 시계 만들기
+- 현재 시간,분,초 나타내는법 -> const date = new Date();
+- 시간: date.getHours() , 분: date.getMinutes(), 초: date.getSeconds()
+- setInterval(getClock, 1000); // getClock을 1초마다 반복
+
+## PadStart
+- ex) A.padStart (2,"0") : A의 글자수는 2글자이며 2글자가 아닐경우 앞에 "0"을 붙여준다.
+- ex) String(date.getHours()).padStart(2, "0");  //padstart는 string에만 붙으므로 String으로 변경해야함.
+- clock.innerText = `${hour}:${minute}:${second}`;
+
+## Quotes
+- 실수 -> 정수로 바꾸기
+- math.random(): :0~1까지 랜덤으로 숫자가 나온다.
+- math.round():.5이상은 위로 올려준다.
+- math.ceil(): 소수점버리고 위로 올려준다.
+- math.floor(): 소수점 버리고 아래로 내려준다.
+
+## Background 
+### background 랜덤하게 출력
+- const chosenimage = images[Math.floor(Math.random() * images.length)];  //imges에서 random하게 출력
+- const bgimg = document.createElement("img");   // html을 위한 img태그를 js에서 만들 수 있다.
+- bgimg.src = `img/${chosenimage}`;  // string과 변수를 연결해주는 방법
+- document.body.appendChild(bgimg);  // html body에 bgimg를 추가해준다.
+
+
+
+
+
+
+
