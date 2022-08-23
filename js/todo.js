@@ -6,15 +6,16 @@ const todoS = [];
 
 function handleTodoSubmit(event) {
   event.preventDefault();
-  const newtodo = todoInput.value;
-  todoInput.value = ""; // input value값이 비워지기전에 newtodo에 값이 저장됨.
+  const newtodo = todoInput.value; // 입력값이 비워지기전에 newtodo에 값을 저장함.
+  todoInput.value = ""; // 입력값을 비운다.
   console.log(newtodo);
-  todoS.push(newtodo); //  리스트에 입력값을 추가한다.
+  todoS.push(newtodo); //  리스트에 입력값을 추가한다.(push)
   PaintTodo(newtodo); // 입력값을 화면상에 그린다.(paint)
   SaveTodos(); //  입력값을  local storage에 저장한다.
 }
 
 function SaveTodos() {
+  // localstorage에 저장하는 함수
   localStorage.setItem("toDos", JSON.stringify(todoS)); // localstorage에  저장할때 배열의 형태로 저장(덮어쓰기 가능)
 }
 
@@ -35,9 +36,18 @@ function PaintTodo(newtodo) {
 }
 
 function DeleteTodo(event) {
+  // list를 삭제해주는 함수
   // console.dir(event.target.parentElement);
   const li = event.target.parentElement; // target 은 button이다. button의 부모는 li
   li.remove(); // 클릭된 button의 부모 li를 제거하면 버튼이 제거된다. +text도 제거
 }
 
 todoForm.addEventListener("submit", handleTodoSubmit);
+
+const savedtoDos = localStorage.getItem("toDos");
+console.log(savedtoDos); // String 형태
+if (savedtoDos != null) {
+  const parsedtoDos = JSON.parse(savedtoDos); // String->arry 형태로 변환
+  console.log(parsedtoDos);
+  pasrsedtoDos.forEach((item) => console.log("hello " + item)); // arrow function
+}
