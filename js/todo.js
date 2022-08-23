@@ -46,10 +46,17 @@ function DeleteTodo(event) {
   // console.dir(event.target.parentElement);
   const li = event.target.parentElement; // target 은 button이다. button의 부모는 li
   li.remove(); // 클릭된 button의 부모 li를 제거하면 버튼이 제거된다. +text도 제거
+
   todoS = todoS.filter((item) => item.id !== parseInt(li.id));
   //요소삭제시 클릭한 li의 id와 todoS의 id가 같지 않다면 새로운 배열에 유지되어 출력됨.
   SaveTodos(); // 새로운 배열을  localstorage에 저장
 }
+/*
+function sexyfilter(item) {
+  return item !== 3; //  item이 3이면 배열에세 제외
+}
+[1, 2, 3, 4].filter(sexyfilter); // 새로운 배열에 1,2,4 만 출력됨
+*/
 
 todoForm.addEventListener("submit", handleTodoSubmit);
 
@@ -57,13 +64,6 @@ const savedtoDos = localStorage.getItem("toDos");
 console.log(savedtoDos); // String 형태
 if (savedtoDos != null) {
   const parsedtoDos = JSON.parse(savedtoDos); // String->arry 형태로 변환
-  todoS = parsedtoDos;
+  todoS = parsedtoDos; // 새로운 요소를 추가하기 이전의 요소들이 배열에 있게한다.
   parsedtoDos.forEach(PaintTodo); // 새로고침해도 localstorage에 있던 각각의 요소들을 가져온다.
 }
-
-/*
-function sexyfilter(item) {
-  return item !== 3; //  item이 3이면 배열에세 제외
-}
-[1, 2, 3, 4].filter(sexyfilter); // 새로운 배열에 1,2,4 만 출력됨
-*/
